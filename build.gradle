@@ -10,9 +10,9 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 
-version = "1.0"
-group = "com.yourname.modid"
-archivesBaseName = "modid"
+version = "1.0.0" + getRevision()
+group = "com.github.stilllogic20.per4mc"
+archivesBaseName = "Per4MC"
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8 // Need this here so eclipse task generates correctly.
 compileJava {
@@ -47,4 +47,12 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+def getRevision() {
+    def out = new StringBuilder()
+    def git = "git.exe rev-parse --short HEAD".execute()
+    git.consumeProcessOutput(out, System.err)
+    git.waitForOrKill(2000)
+    return "." + out.toString().replaceAll("\r?\n", "")
 }
