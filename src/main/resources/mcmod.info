@@ -1,0 +1,16 @@
+[
+{
+  "modid": "per4mc",
+  "name": "per4mc",
+  "description": "Performance Optimizations for more experience.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/stilllogic20/per4mc",
+  "updateUrl": "https://github.com/stilllogic20/per4mc/releases",
+  "authorList": ["azure"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
